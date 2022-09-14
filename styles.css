@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');
+:root{
+    --left-bg-color: rgba(250, 239, 140, 0.7);  
+    --right-bg-color: rgba(138, 135, 136, 0.8);
+    --left-btn-hover-color: rgb(139, 86, 36);
+    --right-btn-hover-color: rgb(68, 59, 64);
+    --hover-width: 75%;
+    --other-width: 25%;
+    --speed:3000ms; 
+
+}
+*{
+  font-family: 'Montserrat Alternates', sans-serif;
+  padding: 0;
+  margin: 0;  
+}
+body{
+    height: 100vh;
+    position: relative;
+    overflow:hidden;
+}
+
+h1.classic{
+    font-size: 4rem;
+    color: antiquewhite;
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+h1.modern{
+    font-size: 4rem;
+    color: antiquewhite;
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.btn-classic{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: 80%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: antiquewhite;
+    border: #fff solid  0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 15rem;
+    padding: 1.5rem;
+}
+.btn-modern{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: antiquewhite;
+    border: #fff solid  0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 15rem;
+    padding: 1.5rem;
+}
+.split.left .btn-classic:hover{
+    background-color: var(--left-btn-hover-color);
+    border-color: var(--left-btn-hover-color);
+}
+.split.right .btn-modern:hover{
+    background-color: var(--right-btn-hover-color);
+    border-color: var(--right-btn-hover-color);
+}
+
+ .container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background:#333 ;
+}
+
+.split{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.split.left{
+    left: 0;
+    background: url('classic.jfif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.split.left::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg-color);  
+}
+
+.split.right{
+    right: 0;
+    background: url('modern.jfif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.right::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--right-bg-color);  
+}
+
+.split.right,
+.split.left,
+.split.right::before,
+.split.left::before{
+  transition: all var(--speed) ease-in-out;
+}
+
+
+.hover-left .left{
+  width: var(--hover-width);
+}
+
+.hover-left .right{
+  width: var(--other-width);
+}
+.hover-right .right{
+    width: var(--hover-width);
+}
+
+.hover-right .left{
+    width: var(--other-width);
+}
+
+
+
+
+
+
+
+
+
+
+
+
